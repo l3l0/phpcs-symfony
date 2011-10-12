@@ -1,39 +1,38 @@
 <?xml version="1.0"?>
 <ruleset name="symfony">
-    <description>The Symfony coding standard.</description>
-    
+    <description>The Symfony 1.x coding standard.</description>
+
+    <rule ref="Generic.ControlStructures.InlineControlStructure"/>
+    <rule ref="Generic.PHP.DisallowShortOpenTag"/>    
     <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
-    <rule ref="Symfony.WhiteSpace.ScopeIndent"/>
+    <rule ref="Generic.WhiteSpace.ScopeIndent">
+      <properties>
+         <property name="indent" value="2"/>
+      </properties>
+    </rule>
+    <rule ref="Symfony.Classes.ValidClassName">
+      <properties>
+         <property name="classNamePattern" value="/^gy[A-Z]{1}[a-zA-Z0-9]+$/"/>
+      </properties>
+    </rule>
+    
+    <rule ref="Symfony.Classes.OnePerFile"/>
+    <rule ref="Symfony2.WhiteSpace.DiscourageFitzinator"/>
+    <rule ref="Squiz.Objects.ObjectMemberComma"/>
+    <rule ref="Squiz.PHP.Eval"/>
     <rule ref="Generic.Functions.OpeningFunctionBraceBsdAllman"/>
 
-    <!-- Import Zend coding standard (which in turn imports PEAR) -->
-    <rule ref="Zend">
-        <!-- but exclude their code analyzer -->
-        <exclude name="Zend.Debug.CodeAnalyzer"/>
-
-        <!-- covered by Squiz ControlSignature, which enforces try/catch as well -->
-        <exclude name="PEAR.ControlStructures.ControlSignature"/>
-
-        <!-- do not check line length -->
-        <exclude name="Generic.Files.LineLength"/>
+    <rule ref="Generic.Files.LineLength">
+      <properties>
+         <property name="lineLimit" value="80"/>
+         <property name="absoluteLineLimit" value="120"/>
+      </properties>
     </rule>
-
-    <!-- Don't enforce Zend's private member underscores -->
-    <rule ref="Zend.NamingConventions.ValidVariableName.PrivateNoUnderscore">
-        <severity>0</severity>
-    </rule>
-
-    <!-- Ignore variables that contains numbers -->
-    <rule ref="Zend.NamingConventions.ValidVariableName.ContainsNumbers">
-        <severity>0</severity>
-    </rule>
-
-    <!-- In practice, Symfony2 spaces multiline function calls differently than Zend -->
-    <rule ref="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket">
-        <severity>0</severity>
-    </rule>
-    <rule ref="PEAR.Functions.FunctionCallSignature.CloseBracketLine">
-        <severity>0</severity>
+    
+    <rule ref="Generic.Files.LineEndings">
+      <properties>
+         <property name="eolChar" value="\n"/>
+      </properties>
     </rule>
 
 </ruleset>
