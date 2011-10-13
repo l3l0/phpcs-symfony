@@ -51,7 +51,7 @@ class Symfony_Sniffs_Classes_OnePerFileSniff implements PHP_CodeSniffer_Sniff
         }
 
         if ($classesQuantity > 1) {
-            $warning = '%d classes or interfaces are one in file';
+            $warning = '%d classes or interfaces are in one file';
             $data    = array(
                        $classesQuantity 
                      );

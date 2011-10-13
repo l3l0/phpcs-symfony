@@ -10,17 +10,29 @@
          <property name="indent" value="2"/>
       </properties>
     </rule>
+    <rule ref="PEAR.WhiteSpace.ScopeClosingBrace"/>
+    <rule ref="Symfony2.WhiteSpace.DiscourageFitzinator"/>
+    <rule ref="Squiz.Scope.MemberVarScope"/>
+    
     <rule ref="Symfony.Classes.ValidClassName">
       <properties>
          <property name="classNamePattern" value="/^gy[A-Z]{1}[a-zA-Z0-9]+$/"/>
       </properties>
     </rule>
     
+    <rule ref="Generic.Formatting.SpaceAfterCast"/>
+    <rule ref="Generic.Functions.CallTimePassByReference"/>
+    <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
+    
     <rule ref="Symfony.Classes.OnePerFile"/>
-    <rule ref="Symfony2.WhiteSpace.DiscourageFitzinator"/>
     <rule ref="Squiz.Objects.ObjectMemberComma"/>
     <rule ref="Squiz.PHP.Eval"/>
     <rule ref="Generic.Functions.OpeningFunctionBraceBsdAllman"/>
+    <rule ref="Symfony.Functions.FunctionDeclarationArgumentSpacing"/>
+    <rule ref="Zend.Files.ClosingTag"/>
+    <rule ref="Symfony.NamingConventions.ValidVariableName"/>
+    <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
+    <rule ref="Squiz.Scope.MethodScope"/>
 
     <rule ref="Generic.Files.LineLength">
       <properties>
@@ -28,7 +40,7 @@
          <property name="absoluteLineLimit" value="120"/>
       </properties>
     </rule>
-    
+ 
     <rule ref="Generic.Files.LineEndings">
       <properties>
          <property name="eolChar" value="\n"/>
