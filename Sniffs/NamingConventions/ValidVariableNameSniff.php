@@ -185,7 +185,7 @@ class Symfony_Sniffs_NamingConventions_ValidVariableNameSniff extends PHP_CodeSn
                 if (PHP_CodeSniffer::isCamelCaps($varName, false, true, false) === false) {
                     $varName = $matches[0];
                     $error = 'Variable "%s" is not in valid camel caps format';
-                    $data  = array($originalVarName);
+                    $data  = array($varName);
                     $phpcsFile->addError($error, $stackPtr, 'StringNotCamelCaps', $data);
                     
                 }
